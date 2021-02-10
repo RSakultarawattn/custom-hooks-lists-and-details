@@ -11,7 +11,7 @@ const CharacterById = ({ match }) => {
   return <CharacterDetail {...character} />;
 };
 
-CharacterById.PropTypes = {
+CharacterById.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired
