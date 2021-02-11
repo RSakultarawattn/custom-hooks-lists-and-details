@@ -6,7 +6,7 @@ import ReactDOM from 'react-router-dom';
 export default class Header extends Component {
   render() {
     return (
-      <div className="header">
+      <nav>
         <p className="intro">
                     Hello, and Welcome!
         </p>
@@ -15,7 +15,7 @@ export default class Header extends Component {
             <Link to="/">Home</Link>
           </li>
         </ul>
-      </div>
+      </nav>
     );
   }
 }

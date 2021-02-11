@@ -7,6 +7,7 @@ import {
 import CharacterById from '../../containers/CharacterById';
 import CharactersPage from '../../containers/CharactersPage';
 import Header from '../characters/Header';
+import ThemeProvider from './ThemeContext';
 
 export default function App() {
   return (
