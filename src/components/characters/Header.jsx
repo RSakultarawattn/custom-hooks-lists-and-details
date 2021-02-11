@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-router-dom';
+import FunctionContextComponent from '../context/FunctionContextComponent';
+import { ThemeProvider } from '../context/ThemeContext';
+
+
 
 
 export default class Header extends Component {
   render() {
     return (
-      <div className="header">
+      <nav>
+        <ThemeProvider>
+          <FunctionContextComponent />
+        </ThemeProvider>
+      
         <p className="intro">
                     Hello, and Welcome!
         </p>
@@ -15,7 +23,7 @@ export default class Header extends Component {
             <Link to="/">Home</Link>
           </li>
         </ul>
-      </div>
+      </nav>
     );
   }
 }
