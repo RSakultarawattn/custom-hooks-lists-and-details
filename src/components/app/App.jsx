@@ -10,7 +10,7 @@ import Header from '../characters/Header';
 
 export default function App() {
   return (
-    
+    //getting this to merge
     <Router>
       <Header path="/Home" />
       <Switch>
