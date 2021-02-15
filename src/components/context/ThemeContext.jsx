@@ -1,28 +1,19 @@
-import React, { useContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
+import styles from './theme';
 
-const ThemeContext = React.createContext();
-const ThemeUpdateContext = React.createContext;
+export const ThemeContext = createContext();
 
-export function useTheme() {
-  return useContext(ThemeContext);
-}
+const ThemeProvider = ({ children }) => {
+  const [themeMode, setThemeMode] = useState('lightTheme');
 
-export function useThemeUpdate() {
-  return useContext(ThemeUpdateContext);
-}
-
-export function ThemeProvider({ children }) {
-  const [darkTheme, setDarkTheme] = useState(true);
-
-  function toggleTheme() {
-    setDarkTheme(prevDarkTheme => !prevDarkTheme);
-  }
+  const mode = styles[themeMode];
+  const value = { setThemeMode, themeMode };
 
   return (
-    <ThemeContext.Provider value={darkTheme}>
-      <ThemeUpdateContext.Provider value={toggleTheme}>
-        {children}
-      </ThemeUpdateContext.Provider>
+    <ThemeContext.Provider style={mode} value={value}>
+      <div style={mode}>{children}</div>
     </ThemeContext.Provider>
   );
-}
+};
+
+export default ThemeProvider;
